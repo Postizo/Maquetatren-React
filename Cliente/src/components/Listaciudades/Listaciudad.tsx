@@ -21,7 +21,6 @@ export default class Listaciudad extends React.Component<IListaCiudadProps, ILis
         
         ciudadSrv.GetCiudades().then((data: ciudad[]) => {
             this.setState((state, props) => ({
-                nombre1: "Ignacio 11",
                 Ciudades : data
                 }));
         }).catch(err => {

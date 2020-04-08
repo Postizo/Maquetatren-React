@@ -3,7 +3,7 @@ var cors = require('cors');
 var app = express();
 const https = require('https')
 const fs = require('fs')
-const port = 443;
+const port = 5001;
 
 var path = require('path');
 var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
@@ -23,8 +23,8 @@ var NombreElementos;
 
 
 const httpsOptions = {
-    key: fs.readFileSync('./security/certificate.key'),
-    cert: fs.readFileSync('./security/certificate.crt.txt')
+    key: fs.readFileSync(path.resolve(__dirname, 'security/certificate.key')),
+    cert: fs.readFileSync(path.resolve(__dirname, 'security/certificate.crt.txt'))
 }
 
 //Inicializacion del Socket
@@ -38,7 +38,7 @@ var io = require('socket.io')(server);
 
 function leeconfig()
 {
-let archivo = fs.readFileSync('Config.txt', 'utf-8');
+let archivo = fs.readFileSync(path.resolve(__dirname, 'Config.txt'), 'utf-8');
 NombreElementos = archivo.split('\n');
 //console.log(NombreElementos.toString());
 }
@@ -95,15 +95,17 @@ function eligeled(id){
 		//botonactuador = pushButton4;
 		break;
 	  default:
-		console.log('default');
+	
 	}
 }
 
-app.use(express.static('build'));
+app.use('/static', express.static(__dirname + '/build/static'));
+app.use('/build', express.static(__dirname + '/build'));
+
 app.use(cors());
 
 app.get('/',function(req,res){
- res.sendFile(path.join('index.html'));
+ res.sendFile(__dirname + '/build/index.html');
 });
 
 //API QUE DEVUELVE EL ESTADO DE LOS LED
