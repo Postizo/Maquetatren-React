@@ -100,7 +100,7 @@ function eligeled(id){
 }
 
 app.use('/static', express.static(__dirname + '/build/static'));
-app.use('/build', express.static(__dirname + '/build'));
+app.use('/', express.static(__dirname + '/build'));
 
 app.use(cors());
 
