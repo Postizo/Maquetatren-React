@@ -5,6 +5,7 @@ import { ciudadSrv} from '../../services/ciudadSrv';
 import {ciudad} from '../../entities/ciudad';
 import ComponenteCiudad from './Ciudad/ComponenteCiudad'
 import  io from 'socket.io-client';
+
 const SERVER_URL: string = 'https://controlamaquetatrenes.biz';
 
 export default class Listaciudad extends React.Component<IListaCiudadProps, IListaCiudadState> {
@@ -38,6 +39,7 @@ export default class Listaciudad extends React.Component<IListaCiudadProps, ILis
                     </div>
                 )
                 })
+        
         return ListaCiudadesElement;
     }
 }
