@@ -1,0 +1,162 @@
+@font-face{
+    font-family: 'Raleway';
+    src: local('Raleway'), url(../fonts/Raleway-Medium.ttf) format('truetype');
+}
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid lightgrey;
+}
+
+.logo{
+    background-image: url('../img/logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
+}
+
+.botones{
+    display: grid;
+    grid-template-rows: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+.icono-tren{
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #f3f0f0;
+    border: 1px solid #f3f0f0;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.false{
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);   
+    opacity: 0.9; 
+}
+
+.ciudad {
+    background-image: url('../img/ciudad.png');
+}
+
+.alumbrado{
+    background-image: url('../img/farola.png');
+}
+
+.trafico{
+    background-image: url('../img/trafico.png');
+}
+
+.minas{
+    background-image: url('../img/mina-oro.png');
+}
+
+.funicular{
+    background-image: url('../img/funicular.png');
+}
+
+.tranvia{
+    background-image: url('../img/tranvia.png');
+}
+
+.gasolinera {
+    background-image: url('../img/gasolinera.png');
+}
+
+.incendio{
+    background-image: url('../img/estacion-de-bomberos.png');
+}
+
+.base-aerea{
+    background-image: url('../img/base-aerea.png');
+}
+
+.feria{
+    background-image: url('../img/feria.png');
+}
+
+.aparcar-trenes{
+    background-image: url('../img/estacion-tren.png');
+}
+
+.otros{
+     background-image: url('../img/logo.png');
+}
+
+
+
+
+@media all and (min-width: 375px){
+    .titulo{
+        font-size: 28px;
+    }
+    .logo{
+        width: 60px;
+        height: 60px;
+    }
+
+    .botones{
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        text-align: center;
+    }
+
+    .icono-tren{
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+@media all and (min-width: 768px){
+   
+    .logo{
+        width: 80px;
+        height: 80px;
+    }
+
+    .botones{
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        text-align: center;
+    }
+
+    .icono-tren{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+@media all and (min-width: 1024px){
+    .logo{
+        width: 100px;
+        height: 100px;
+    }
+    .botones{
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        text-align: center;
+    }
+
+    .icono-tren{
+        width: 120px;
+        height: 120px;
+    }
+}

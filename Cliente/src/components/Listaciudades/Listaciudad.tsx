@@ -34,9 +34,7 @@ export default class Listaciudad extends React.Component<IListaCiudadProps, ILis
         ListaCiudadesElement
          = this.state.Ciudades.map(ciudad => {
                 return (
-                    <div>
                         <ComponenteCiudad socket = {this.socket} Id = {ciudad.id} Nombre = {ciudad.Nombre} estadoledload = {ciudad.estadoled}></ComponenteCiudad>
-                    </div>
                 )
                 })
         return ListaCiudadesElement;
