@@ -1,6 +1,6 @@
 Ciudad
 Alumbrado
-Tráfio
+Tráfico
 Minas
 Funicular
 Tranvía 
