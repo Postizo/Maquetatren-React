@@ -1,13 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './styles/styles.css';
 import Listaciudades from './components/Listaciudades/Listaciudad'
 import * as serviceWorker from './serviceWorker';
+import './fonts/Raleway-Medium.ttf';
+
 
 ReactDOM.render(
+<<<<<<< HEAD
   <React.StrictMode>       
     <Listaciudades/>
     <input type= 'button' id = 'add-button' className = '.add-button'  value="Instalar APP"></input>
+=======
+  <React.StrictMode>
+  <header>
+     <div className="logo">
+     </div>
+     <div className="titulo">
+       <p>Maqueta Trenes</p>
+     </div>
+   </header>
+    <section className="botones">
+    <Listaciudades/>
+    </section>
+>>>>>>> upstream/feature/add-styles
   </React.StrictMode>,
   document.getElementById('root')
 );

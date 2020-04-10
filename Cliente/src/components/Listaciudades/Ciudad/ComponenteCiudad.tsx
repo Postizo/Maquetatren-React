@@ -2,6 +2,8 @@ import React from 'react';
 import { IcomponenteciudadProps } from './IcomponenteciudadProps';
 import { IcomponenteciudadState } from './IcomponenteciudadState';
 
+import '../../../styles/styles.css';
+
 import {ciudad} from '../../../entities/ciudad'
 const EVENT_NAME: string = 'Seccion1';
 
@@ -17,7 +19,7 @@ export default class ComponenteCiudad extends React.Component<IcomponenteciudadP
     }
 
     handleMessage(event: ciudad): void {  
-        if (event.id == this.props.Id)
+        if (event.id === this.props.Id)
         {
             this.setState((state,props)=> ({estadoled: event.estadoled})); 
             console.log( event.id + ' ' + event.estadoled)    
@@ -25,7 +27,7 @@ export default class ComponenteCiudad extends React.Component<IcomponenteciudadP
          
     }
 
-    valorLedOnChange(e: React.ChangeEvent<HTMLInputElement>)
+    valorLedOnChange()
     {   
         console.log("cambia al pulsar");
         let mandaciudad = new ciudad()
@@ -41,17 +43,22 @@ export default class ComponenteCiudad extends React.Component<IcomponenteciudadP
 
         CiudadElement
          = (
-            <tr key={this.props.Id}>
-                 <td>{this.props.Id}</td>
-                <td>{this.props.Nombre}</td>
-                <td><input type="checkbox"
-                 checked = {this.state.estadoled}
-                 onChange = {this.valorLedOnChange}/>
-                 
-                 </td> 
-            </tr>
+            <p key={this.props.Id}>
+             <input className={`icono-tren ${this.props.Nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trimEnd().replace(/ /g,'-').toLocaleLowerCase()} ${this.state.estadoled}`} type="button" onClick={this.valorLedOnChange}></input>
+             <br/>
+            <span>{this.props.Nombre}</span>
+            </p>
         );
 
         return CiudadElement;
     }
 }
+
+/*
+
+     <td>{this.props.Id}</td>
+                <td>{this.props.Nombre}</td>
+                <td><input type="checkbox"
+                 checked = {this.state.estadoled}
+                 onChange = {this.valorLedOnChange}/>                 
+                 </td>*/
